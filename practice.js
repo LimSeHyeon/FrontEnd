@@ -100,7 +100,7 @@ function min2(a,b) {
         return b;
     }
 }
-*/
+
 
 console.log(max1(10,4));
 //함수표현식 : 함수 정의, 변수에 할당
@@ -113,3 +113,17 @@ const max2 = (a,b) => {
     return a>b ? a : b;
 }
 const max3 = (a,b) => (a>b ? a : b);//중괄호 블록 생략 가능
+*/
+
+//함수도 하나의 데이터 타입이 될 수 있음
+function createGreeting(greetingPrefix) {
+    return function(name) {
+        console.log(greetingPrefix + ', ' + name + "!");
+    };
+}
+
+const greetHello = createGreeting("Hello");
+const greetHi = createGreeting("Hi");
+console.log(typeof(greetHello));//함수의 반환 형식이 함수
+greetHello("Alice");
+greetHi("Bob");
