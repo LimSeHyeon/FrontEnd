@@ -62,7 +62,7 @@ a=" 90:30:80 "이고 :을 기준으로 각각 수학점수, 영어점수, 과학
 각 점수를 각각 math, english, science 변수에 저장한 후,
 average 란 변수에 평균값을 저장하고 출력하시오.
 이 때 출력의 형태는 “평균 점수는 ~~입니다.”로 하시오.
-*/
+
 let a = " 90:30:80 ";
 a = a.trim();//공백 제거
 let arr = a.split(":");
@@ -73,3 +73,14 @@ let [math, english, science] = arr;
 // science = parseInt(arr[2]);
 let average = (parseInt(math) + parseInt(english) + parseInt(science)) / 3;
 console.log(`평균 점수는 ${average}입니다.`);
+*/
+
+let obj1 = {
+    'key': 'value',
+    'city': 'seoul',
+    'age' : 12
+}
+console.log(obj1);
+console.log(typeof(obj1));
+console.log(obj1.key);
+console.log(obj1.city);
