@@ -28,3 +28,14 @@ console.log(multi);
 
 // 이스케이프 코드는 백슬래시 \
 // \n \t \\ \" \'
+
+//자주 쓰는 함수
+console.log(multi.length);
+console.log(multi[12]);
+console.log(multi.charAt(12));
+console.log(multi.toUpperCase());
+console.log(multi.toLowerCase());
+console.log(multi.indexOf("J"));
+console.log(multi.indexOf("Y"));
+console.log(multi.startsWith("Hello"));//startswith, endswith 대소문자 구별 함
+console.log(multi.endsWith("JS"));
