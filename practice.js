@@ -116,6 +116,7 @@ const max3 = (a,b) => (a>b ? a : b);//중괄호 블록 생략 가능
 */
 
 //함수도 하나의 데이터 타입이 될 수 있음
+/*
 function createGreeting(greetingPrefix) {
     return function(name) {
         console.log(greetingPrefix + ', ' + name + "!");
@@ -127,3 +128,4 @@ const greetHi = createGreeting("Hi");
 console.log(typeof(greetHello));//함수의 반환 형식이 함수
 greetHello("Alice");
 greetHi("Bob");
+*/
