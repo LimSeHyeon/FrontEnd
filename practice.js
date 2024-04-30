@@ -128,4 +128,4 @@ const greetHi = createGreeting("Hi");
 console.log(typeof(greetHello));//함수의 반환 형식이 함수
 greetHello("Alice");
 greetHi("Bob");
-*/
+*/ 
