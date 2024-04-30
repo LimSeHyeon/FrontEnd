@@ -74,7 +74,7 @@ let [math, english, science] = arr;
 let average = (parseInt(math) + parseInt(english) + parseInt(science)) / 3;
 console.log(`평균 점수는 ${average}입니다.`);
 */
-
+/*
 let obj1 = {
     'key': 'value',
     'city': 'seoul',
@@ -84,3 +84,17 @@ console.log(obj1);
 console.log(typeof(obj1));
 console.log(obj1.key);
 console.log(obj1.city);
+*/
+
+console.log(min(1,2));
+function min(a,b) {
+    return a<b ? a : b;
+}
+
+function min2(a,b) {
+    if(a<b) {
+        return a;
+    } else {
+        return b;
+    }
+}
