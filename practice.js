@@ -86,6 +86,8 @@ console.log(obj1.key);
 console.log(obj1.city);
 */
 
+/*
+//함수 선언, 정의
 console.log(min(1,2));
 function min(a,b) {
     return a<b ? a : b;
@@ -98,3 +100,16 @@ function min2(a,b) {
         return b;
     }
 }
+*/
+
+console.log(max1(10,4));
+//함수표현식 : 함수 정의, 변수에 할당
+//함수표현식은 맨 위로 올리지 않기 때문에 오류가 날 수 있음
+const max1 = function(a,b) {
+    return a>b ? a : b;
+}
+//화살표함수(파이썬 람다함수 느낌)
+const max2 = (a,b) => {
+    return a>b ? a : b;
+}
+const max3 = (a,b) => (a>b ? a : b);//중괄호 블록 생략 가능
