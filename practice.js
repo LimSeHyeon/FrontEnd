@@ -11,9 +11,20 @@
 //     rl.close();
 // });
 
+/*
 let first = "hello workd";
 let multi = "hello \n world";
 
 console.log(first);
 console.log("---".repeat(10));
 console.log(multi);
+*/
+
+//백틱 사용 이유 : 문자열 포맷팅
+let name = "임세현";
+let multi = `Hello ${name}
+Hello Js`;
+console.log(multi);
+
+// 이스케이프 코드는 백슬래시 \
+// \n \t \\ \" \'
