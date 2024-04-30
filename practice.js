@@ -30,6 +30,7 @@ console.log(multi);
 // \n \t \\ \" \'
 
 //자주 쓰는 함수
+/*
 console.log(multi.length);
 console.log(multi[12]);
 console.log(multi.charAt(12));
@@ -39,3 +40,15 @@ console.log(multi.indexOf("J"));
 console.log(multi.indexOf("Y"));
 console.log(multi.startsWith("Hello"));//startswith, endswith 대소문자 구별 함
 console.log(multi.endsWith("JS"));
+
+let newStr = multi.slice(4,10);
+console.log(newStr);
+let arr1 = multi.split("H");
+console.log(arr1);
+*/
+
+let str3 = "     Hello World        ";
+console.log(str3);
+console.log(str3.trim());
+
+console.log("*".repeat(10));
