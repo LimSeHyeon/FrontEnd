@@ -21,11 +21,12 @@ console.log(multi);
 */
 
 //백틱 사용 이유 : 문자열 포맷팅
+/*
 let name = "임세현";
 let multi = `Hello ${name}
 Hello Js`;
 console.log(multi);
-
+*/
 // 이스케이프 코드는 백슬래시 \
 // \n \t \\ \" \'
 
@@ -45,8 +46,8 @@ let newStr = multi.slice(4,10);
 console.log(newStr);
 let arr1 = multi.split("H");
 console.log(arr1);
-*/
-/*
+
+
 let str3 = "     Hello World        ";
 console.log(str3);
 console.log(str3.trim());
