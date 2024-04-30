@@ -10,3 +10,10 @@
 
 //     rl.close();
 // });
+
+let first = "hello workd";
+let multi = "hello \n world";
+
+console.log(first);
+console.log("---".repeat(10));
+console.log(multi);
