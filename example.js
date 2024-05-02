@@ -55,4 +55,17 @@ console.log(y);
 //숫자 입력받고 구구단
 const input = parseInt(prompt("정수 입력 : "));
 for(let i = 1; i < 10; i++) console.log(`${input}*${i} = ${input*i}`);
+
+//글자수가 6글자 이상인 문자를 모아 새로운 배열 생성
+let  word = ['school', 'game', 'piano', 'science', 'hotel', 'mountian'];
+let newword = word.filter(elem => {
+    return elem.length >= 6;
+})
+console.log(newword);
+
+for(let i =1;i<10;i++) {
+    for(let j =1;j<10;j++) {
+        console.log(`${i*j}`);
+    }
+}
 */
