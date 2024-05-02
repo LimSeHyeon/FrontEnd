@@ -5,8 +5,9 @@ let options = {
     k1: 'v1',
     k2: 'v2'
 }
-const {title, width, height, ...rest} = options;
+const {title, width, height:newHeight, ...rest} = options;
 console.log(title);
 console.log(width);
-console.log(height);
+// console.log(height);
 console.log(rest);
+console.log(newHeight);
