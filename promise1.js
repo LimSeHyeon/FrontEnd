@@ -15,7 +15,7 @@ new Promise((resolve, reject) => {
     console.error("Reject!");
     console.log(err);
 })
-*/
+
 
 function fastFunction(data) {
     return new Promise((resolve, reject) => {
@@ -53,7 +53,36 @@ function runTasks() {
 
 const sample = runTasks();
 console.log(sample);//promise 객체가 반환값임
+*/
 
 //pending: 종료 x
 //fulfilled : 성공
 //rejected : 실패
+
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+function fastFunction (data) {
+    return new Promise((resolve, reject) => {
+        setTimeout(function () {
+            const result = data * 2;
+            console.log('Fast function done', result)
+            resolve(result);
+        }, 1000);
+    })
+}
+
+async function slowFunction (data) {
+    await delay(3000);
+    const result = data + 10;
+    console.log('slow function done', result)
+    return result;
+}
+
+async function runTasks () {
+    let result = await fastFunction(10);
+    result = await slowFunction(result);
+    console.log('작업완료', result);
+}
+
+const sample = runTasks();
+console.log(sample);
