@@ -45,3 +45,9 @@ Animal.prototype.eat = function() {
 animal2.eat();
 console.log(animal2);
 console.log(animal2.__proto__);//객체 본인의 생성자 함수 혹은 만들어진 생성자 함수의 프로토타입에 접근
+
+function Rabbit(name, color) {
+    //arguments : 함수라면 가지고 있는 특수한 변수, 인자를 나타내는 유사배열;
+    Animal.apply(this, arguments);//Animal 함수를 적용하되 context를 this(Rabbit)으로 한다.
+    this.color = color;
+}
