@@ -6,7 +6,40 @@
     <title>Document</title>
 
 </head>
+<body>
+    <div id="block1" onclick="javascript:onBlockClick(event)"
+    style="background-color: blue;">
+        Block1
+    </div>
+    <div id="block2">Block2</div>
+    <div id="block3">Block3</div>
+    
+    <input type="text" name="search" id="search"/>
+
+    <script src="./index.js"></script>
+
+    <script>
+        function onBlockClick(e) {
+            alert("버튼 클릭1");
+            console.log(e);
+        }
+        function onChangeInput(e) {
+            console.log(e);
+            console.log(e.target.value);
+        }
+        const searchInput = document.getElementById("search");
+        searchInput.addEventListener("change", onChangeInput);
+    </script>
+</body>
 </html>
+
+
+
+
+
+
+
+
 
 <!-- 
     const newDiv = document.createElement("div");
@@ -25,4 +58,11 @@
     toNaver.setAttribute('href', 'https://naver.com');
     newDiv.appendChild(toNaver);
     
+
+    const block = document.getElementById('block2');
+
+    block.addEventListener('click', (e)=> {
+    alert("Block2 클릭");
+    console.log(e);
+})
  -->
