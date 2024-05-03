@@ -15,6 +15,7 @@ async function slowFunction(data) {
 }
 
 /*
+//promise-all
 function runTask() {
     Promise.all(
         [fastFunction(5), slowFunction(10)]
@@ -25,7 +26,7 @@ function runTask() {
     })
 }
 
-
+//promice-race
 function runTask() {
     Promise.race([fastFunction(5), slowFunction(10)]).then(data => {
         console.log('작업완료');
@@ -33,4 +34,17 @@ function runTask() {
     })
 }
 */
+
+//promise-allsellted
+function runTask() {
+    Promise.allSettled([
+        fastFunction(5),
+        slowFunction(10),
+        Promise.reject(new Error('Errors'))]
+        ).then(
+            data => {
+        console.log('작업 완료');
+        console.log(data);
+    })   
+}
 runTask();
