@@ -1,26 +1,23 @@
-/*
-function ask(agree, yes, no) {
-    agree() ? yes() : no();
+let numInput1 = document.getElementById("input1");
+let numInput2 = document.getElementById("input2");
+
+let num1 = Number(numInput1.value);
+let num2 = Number(numInput2.value);
+
+input1.addEventListener("input", e=> {
+    num1 = Number(e.target.value);
+    renderResult();
+})
+input2.addEventListener("input", e=> {
+    num2 = Number(e.target.value);
+    renderResult();
+})
+
+function renderResult() {
+    const resultBox = document.getElementById("result");
+    let sum = num1 + num2;
+    if(isNaN(sum)) {
+        sum = "사용할 수 없는 값입니다.";
+    }
+    resultBox.innerHTML = sum;
 }
-
-ask(
-    () => confirm("동의하십니까?"),
-    function() { alert("동의하셨습니다.") },
-    function() { alert("취소 버튼을 누르셨습니다.") }
-);
-
-
-//아래 둘이 같음
-() => {
-    return confirm("동의?");
-}
-
-() => confirm("동의?");
-*/
-
-// const age = parseInt(prompt("나이를 입력하여 주세요."));
-// let message = (age<3) ? "무료입니다":
-//     (age<10) ? "청소년입니다." :
-//     (age<100) ? "감사합니다." :
-//     "나이가 아주 많으시군요"
-// alert(message);
