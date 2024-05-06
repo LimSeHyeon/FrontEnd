@@ -16,3 +16,9 @@ inner.addEventListener('click', e=> {
     e.stopPropagation();
     console.log("inner Event");
 });
+
+let submitBtn = document.getElementById('submit-btn');
+submitBtn.addEventListener('click', e=> {
+    e.preventDefault();
+    alert("버튼 클릭");
+});
