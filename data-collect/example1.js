@@ -1,6 +1,7 @@
 import axios from 'axios';
 import * as cheerio from 'cheerio';
 
+let quotes = [];
 axios.get('https://quotes.toscrape.com').then(resp => {
     return resp.data;
 }).then(data => {
@@ -10,27 +11,23 @@ axios.get('https://quotes.toscrape.com').then(resp => {
         $(quoteTags[0]).find('.text').text()
     );
     */
-
-
+    
     const quoteTags = $('.container .quote');
-    for(let i = 0; i < quoteTags.length; i++) {
-        console.log($(quoteTags[i]).find('.text').text());
-    }
-
-
     const authorNameTags = $('.container .author');
-    for(let i = 0; i < authorNameTags.length; i++) {
-        console.log($(authorNameTags[i]).text());
-    }
+    const tagsTags = $('.container .tags');
 
-    const tagsTags = $('.container .author');
     for(let i = 0; i < tagsTags.length; i++) {
-        console.log($(tagsTags[i]).text());
-    }
-})
+        let tagList = [];
+        let tags = $(tagsTags[i]).find('.tag');
+        for(let j = 0; j < tags.length; j++) {
+            tagList.push($(tags[j]).text());
+        }
 
-axios.get('https://quotes.toscrape.com').then(resp => {
-    return resp.data;
-}).then(data => {
-    // console.log({data});
+        quotes.push({
+            "quote": $(quoteTags[i]).find('.text').text(),
+            "author": $(authorNameTags[i]).text(),
+            "tags": tagList
+        });
+    }
+    console.log(quotes);
 });
