@@ -23,17 +23,32 @@ async function scrapeQuotePage(pageNum) {
     return arr;
 }
 
-(async() => {
+// (async() => {
+//     let result = [];
+//     for(let i=1;i<=10;i++) {
+//         const arr = await scrapeQuotePage(i);
+//         result = [
+//             ...result,
+//             arr
+//         ]
+//     }
+//     // JSON.stringify() // js object -> json(문자열)
+//     // JSON.parse() // json(문자열) -> js object
+//     const data = JSON.stringify(result);
+//     fs.writeFile('result.json', data, (err) => {});
+// })();
+
+const promiseArr = [];
+for(let i=1;i<=10;i++) {
+    promiseArr.push(scrapeQuotePage(i));
+}
+Promise.all(promiseArr).then(dataArr=>{
     let result = [];
-    for(let i=1;i<=10;i++) {
-        const arr = await scrapeQuotePage(i);
-        result = [
+    for(let i = 0;i<dataArr.length;i++) {
+        result = {
             ...result,
-            arr
-        ]
+            ...dataArr[i]
+        }
     }
-    // JSON.stringify() // js object -> json(문자열)
-    // JSON.parse() // json(문자열) -> js object
-    const data = JSON.stringify(result);
-    fs.writeFile('result.json;', data, (err) => {});
-})();
+    fs.writeFile('result2.json', JSON.stringify(result), (err)=>{});
+})
