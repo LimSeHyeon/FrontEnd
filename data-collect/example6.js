@@ -3,15 +3,25 @@ import * as cheerio from 'cheerio';
 
 async function fetchWadiz() {
     const url = 'https://service.wadiz.kr/api/search/funding';
-    const resp = await axios.post(url, {
-        "startNum": 0,
-        "order": "recommend",
-        "limit": 48,
-        "categoryCode": "",
-        "endYn": ""
-    }, {});
-    console.log(resp.data);
-    console.log(resp.data.data.list);    
+    let result = [];
+
+    for(let i = 0; i <1; i++) {
+        const size = 500;
+        const resp = await axios.post(url, {
+            "startNum": 0,
+            "order": "recommend",
+            "limit": size,
+            "categoryCode": "",
+            "endYn": ""
+        }, {});
+        // console.log(resp.data);
+        result = [
+            ...result,
+            ...resp.data.data.list
+        ]
+    }
+    console.log(result.length);
+    // Json.parse();
 }
 
 fetchWadiz();
