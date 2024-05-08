@@ -1,15 +1,20 @@
 import axios from 'axios';
 import * as cheerio from 'cheerio';
 
-async function wadiz() {
-    const resp = await axios.get('https://www.wadiz.kr/web/wreward/main', {});
-    const data = await resp.data;
-    const $ = cheerio.load(data);
-
-    
+async function fetchWadiz() {
+    const url = 'https://service.wadiz.kr/api/search/funding';
+    const resp = await axios.post(url, {
+        "startNum": 0,
+        "order": "recommend",
+        "limit": 48,
+        "categoryCode": "",
+        "endYn": ""
+    }, {});
+    console.log(resp.data);
+    console.log(resp.data.data.list);    
 }
 
-
+fetchWadiz();
 
 
 
