@@ -24,6 +24,8 @@ import React, { useEffect, useState } from 'react';
 export default function BlinkComponent({text}) {
     const [showText, setShowText] = useState(true);
 
+    // 한번 등록해 놓고 값만 바꾸기
+    /*
     useEffect(() => {
         const timeoutId = setInterval(()=>{
             console.log("호출");
@@ -34,6 +36,22 @@ export default function BlinkComponent({text}) {
         return () => {clearInterval(timeoutId)}
     }, [showText])
 
+    return (
+        <div>
+            {showText? text : null}
+        </div>
+    )
+    */
+
+    //3초마다 인터벌 해제 후 재등록
+    useEffect(()=>{
+        const intervalId = setInterval(()=>{
+            console.log("호출");
+            setShowText(!showText);
+        }, 3000);
+        return ()=>{clearInterval(intervalId);}
+    }, [showText]);
+    
     return (
         <div>
             {showText? text : null}

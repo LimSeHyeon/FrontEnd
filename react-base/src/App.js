@@ -20,10 +20,10 @@ function App() {
     caption="구름이미지"/>
     <CaptionImage imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmsaOoe2KUxfphcXFyqy2q0LHCfMUIxbx8xA&s"
     caption="이건 트럭입니다."/> */}
-    {/* <BlinkComponent text="안녕하세요"/> */}
+    <BlinkComponent text="안녕하세요"/>
     {/* <CBlinkComponent text="반갑습니다"/> */}
     {/* <CountComponent/> */}
-    
+
     <button onClick={e=>{
       setShowCount(!showCount);
     }}>버튼</button>
