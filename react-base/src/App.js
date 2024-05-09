@@ -24,10 +24,10 @@ function App() {
     {/* <CBlinkComponent text="반갑습니다"/> */}
     {/* <CountComponent/> */}
 
-    <button onClick={e=>{
+    {/* <button onClick={e=>{
       setShowCount(!showCount);
     }}>버튼</button>
-    {showCount? <CountComponent/> : null}
+    {showCount? <CountComponent/> : null} */}
     
   </div>
   );
