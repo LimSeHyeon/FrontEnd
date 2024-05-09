@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import HelloWorld from './components/HelloWorld';
 import CaptionImage from './components/CaptionImage';
+import BlinkComponent from './components/BlinkComponent';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
     caption="구름이미지"/>
     <CaptionImage imgUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmsaOoe2KUxfphcXFyqy2q0LHCfMUIxbx8xA&s"
     caption="이건 트럭입니다."/>
+    <BlinkComponent text="안녕하세요"/>
   </div>
   );
 }
