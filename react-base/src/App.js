@@ -5,8 +5,11 @@ import CaptionImage from './components/CaptionImage';
 import BlinkComponent from './components/BlinkComponent';
 import CBlinkComponent from './components/CBlinkComponent';
 import CountComponent from './components/CountComponent';
+import {useState} from 'react';
 
 function App() {
+  const [showCount, setShowCount] = useState(true);
+
   return (
     // <div className="App">
     //   <HelloWorld style={{textAlign: "center"}}/>
@@ -19,7 +22,13 @@ function App() {
     caption="이건 트럭입니다."/> */}
     {/* <BlinkComponent text="안녕하세요"/> */}
     {/* <CBlinkComponent text="반갑습니다"/> */}
-    <CountComponent/>
+    {/* <CountComponent/> */}
+    
+    <button onClick={e=>{
+      setShowCount(!showCount);
+    }}>버튼</button>
+    {showCount? <CountComponent/> : null}
+    
   </div>
   );
 }

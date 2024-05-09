@@ -26,6 +26,9 @@ export default function CountComponent() {
 
     useEffect(() => {
         console.log(`카운트가 증가할 때마다 실행! \n -count: ${count}`);
+        return () => {
+            console.log('기존 값을 반환합니다', count);
+        }
     }, [count])
     return (
         <div>
