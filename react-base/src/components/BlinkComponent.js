@@ -26,10 +26,13 @@ export default function BlinkComponent({text}) {
 
     useEffect(() => {
         const timeoutId = setInterval(()=>{
-            setShowText(showText=>!showText);
+            console.log("호출");
+            setShowText(showText=>{
+                return !showText
+            });
         }, 1000)
         return () => {clearInterval(timeoutId)}
-    }, [])
+    }, [showText])
 
     return (
         <div>
