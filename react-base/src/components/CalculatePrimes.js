@@ -25,7 +25,9 @@ export default function PrimeCalculator(props) {
 
     // const primes = calculatePrimes(limit);
     // dependency array가 바뀔 때마다 함수의 리턴값을 저장하는 것 !
-    const primes = useMemo(()=>calculatePrimes(limit), [limit]);
+    const primes = useMemo(()=> {
+        return calculatePrimes(limit)
+    }, [limit]);
     
     const addCount = () => {
         setCount(count+1);
