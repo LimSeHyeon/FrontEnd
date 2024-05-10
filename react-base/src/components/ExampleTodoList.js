@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React, {useState, useCallback, useMemo} from 'react';
 
 const colors = ["red", "yellow", "pink", "violet"];
 
@@ -10,15 +10,22 @@ export default function TodoList() {
     }]);
 
     const [activeColor, setActiveColor] = useState(colors[0]);
+    const [text, setText] = useState('세현아 잘하자');
 
-    const addTodo = useCallback(()=>{
 
-    })
+    const changeText = useCallback((e)=> {
+        setText(e.target.value);
+    }, [text]);
+
+    const addTodo = useCallback(()=>{//여기서 text, activeColor는 함수가 만들어지는 순간의 값
+        setTodoList([...todoList, {text:text, color:activeColor}]);
+    }, [todoList, text, activeColor]);
+
     return (
         <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
             <h1>Todo App</h1>
             <div style={{display:'flex'}}>
-                <input type='text' style={{backgroundColor:activeColor}}/>
+                <input onChange={changeText} type='text' style={{backgroundColor:activeColor}}/>
                 <button onClick={addTodo}>입력</button>
             </div>
             <div style={{display:'flex'}}>
@@ -38,5 +45,4 @@ export default function TodoList() {
             </div>
         </div>
     )
-
 }
