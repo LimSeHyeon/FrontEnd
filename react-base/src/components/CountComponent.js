@@ -1,13 +1,26 @@
-import React, { useEffect, useState} from 'react';
+import React, { useCallback, useEffect, useState} from 'react';
 
 export default function CountComponent() {
     const [count, setCount] = useState(0);
+    const [value1, setValue1] = useState(true);
 
-    const addCount = () => {
-        setCount(count => {
-            return count+1
-        });
+    const ChangeValue = () => {
+        setValue1((v) => !v);
     }
+
+    // const addCount = () => {
+    //     setCount(count => {
+    //         return count+1
+    //     });
+    // }
+
+    //dependency array가 바뀌면 함수를 다시 정의한다 !
+    const addCount = useCallback(() => {
+        setCount(count+1);
+    }, [count]);
+
+
+
     // 이렇게도 됨
     // const addCount = () => {
     //     setCount(count+1);
@@ -32,8 +45,16 @@ export default function CountComponent() {
     }, [count])
     return (
         <div>
-            <div>{count}</div>
-            <button onClick={addCount}>1 증가</button>
+            <div>
+                <div>{value1}</div>
+                <button onClick={ChangeValue}>State 변경</button>   
+            </div>
+            
+            <div>
+                <div>{count}</div>
+                <button onClick={addCount}>1 증가</button>
+            </div>
+            
         </div>
     )
 }
