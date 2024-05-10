@@ -2,6 +2,11 @@ import React, { useEffect, useState} from 'react';
 
 export default function CountComponent() {
     const [count, setCount] = useState(0);
+    const [value1, setValue1] = useState(true);
+
+    const ChangeValue = () => {
+        setValue1((v) => !v);
+    }
 
     const addCount = () => {
         setCount(count => {
@@ -32,8 +37,16 @@ export default function CountComponent() {
     }, [count])
     return (
         <div>
-            <div>{count}</div>
-            <button onClick={addCount}>1 증가</button>
+            <div>
+                <div>{value1}</div>
+                <button onClick={ChangeValue}>State 변경</button>   
+            </div>
+            
+            <div>
+                <div>{count}</div>
+                <button onClick={addCount}>1 증가</button>
+            </div>
+            
         </div>
     )
 }

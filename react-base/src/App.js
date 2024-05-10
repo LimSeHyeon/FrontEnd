@@ -25,14 +25,14 @@ function App() {
     caption="이건 트럭입니다."/> */}
     {/* <BlinkComponent text="안녕하세요"/> */}
     {/* <CBlinkComponent text="반갑습니다"/> */}
-    {/* <CountComponent/> */}
+    <CountComponent/>
 
     {/* <button onClick={e=>{
       setShowCount(!showCount);
     }}>버튼</button>
     {showCount? <CountComponent/> : null} */}
     {/* <FocusInputButton /> */}
-    <PrimeCalculator/>
+    {/* <PrimeCalculator/> */}
     
   </div>
   );
