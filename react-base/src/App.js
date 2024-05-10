@@ -31,7 +31,7 @@ function App() {
       setShowCount(!showCount);
     }}>버튼</button>
     {showCount? <CountComponent/> : null} */}
-    <FocusInputButton />
+    {/* <FocusInputButton /> */}
     <PrimeCalculator/>
     
   </div>

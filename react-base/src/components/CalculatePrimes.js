@@ -14,21 +14,32 @@ function calculatePrimes(limit) {
         }
         if(isPrime) primes.push(i);
     }
+    console.log("소수 계산 완료")
     return primes;
 }
 
-
+//이 상태면 count가 증가해도 소수 계산을 다시 하게 됨
 export default function PrimeCalculator(props) {
     const [limit, setLimit] = useState(10);
-    const primes = calculatePrimes(limit);
+    const [count, setCount] = useState(0);
+
+    // const primes = calculatePrimes(limit);
+    // dependency array가 바뀔 때마다 함수의 리턴값을 저장하는 것 !
+    const primes = useMemo(()=>calculatePrimes(limit), [limit]);
+    
+    const addCount = () => {
+        setCount(count+1);
+    }
     return (
     <div>
-    <input
-    type="number"
-    value={limit}
-    onChange={(e) => setLimit(Number(e.target.value))}
-    />
-    <p> : {primes.join(', ')}</p>
+        {count}
+        <button onClick={addCount}>카운트 증가</button>
+        <input
+            type="number"
+            value={limit}
+            onChange={(e) => setLimit(Number(e.target.value))}
+        />
+        <p>계산된 소수 : {primes.join(', ')}</p>
     </div>
     );
-    }
+}
