@@ -9,6 +9,7 @@ import {useState} from 'react';
 import FocusInputButton from './components/RegisterInputButton';
 import PrimeCalculator from './components/CalculatePrimes';
 import TodoList from './components/ExampleTodoList';
+// import TodoApp from './components/TodoApp';
 
 function App() {
   const [showCount, setShowCount] = useState(true);
@@ -18,6 +19,7 @@ function App() {
     //   <HelloWorld style={{textAlign: "center"}}/>
     // </div>
     <div className="App">
+      {/* <TodoApp/> */}
       
     {/* <HelloWorld/> */}
     {/* <CaptionImage imgUrl="https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/7KPi/image/UGSyDK8noVFVfhr0PUyridMp6T8.JPG"
@@ -26,7 +28,7 @@ function App() {
     caption="이건 트럭입니다."/> */}
     {/* <BlinkComponent text="안녕하세요"/> */}
     {/* <CBlinkComponent text="반갑습니다"/> */}
-    <CountComponent/>
+    {/* <CountComponent/> */}
 
     {/* <button onClick={e=>{
       setShowCount(!showCount);
