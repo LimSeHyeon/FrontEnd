@@ -8,6 +8,7 @@ import CountComponent from './components/CountComponent';
 import {useState} from 'react';
 import FocusInputButton from './components/RegisterInputButton';
 import PrimeCalculator from './components/CalculatePrimes';
+import TodoList from './components/ExampleTodoList';
 
 function App() {
   const [showCount, setShowCount] = useState(true);
@@ -33,6 +34,7 @@ function App() {
     {showCount? <CountComponent/> : null} */}
     {/* <FocusInputButton /> */}
     {/* <PrimeCalculator/> */}
+    <TodoList/>
     
   </div>
   );
