@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App" style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
       <TodoInput inputColor={inputColor}/>
-      <ColorBar/>
+      <ColorBar setInputColor={setInputColor}/>
     
   </div>
   );
