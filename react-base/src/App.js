@@ -3,6 +3,7 @@ import './App.css';
 import {useState} from 'react';
 import TodoInput from './components/TodoInputComponent';
 import ColorBar from './components/ColorBarComponent';
+import TodoList from './components/TodolistComponent';
 
 function App() {
   const [inputColor, setInputColor] = useState('red');
@@ -16,6 +17,7 @@ function App() {
     <div className="App" style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
       <TodoInput inputColor={inputColor} text={text} setText={setText} todoList={todoList} setTodoList={setTodoList}/>
       <ColorBar setInputColor={setInputColor}/>
+      <TodoList todoList={todoList}/>
     
   </div>
   );
