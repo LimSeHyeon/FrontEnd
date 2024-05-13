@@ -11,7 +11,7 @@ import PrimeCalculator from './components/CalculatePrimes';
 import TodoList from './components/ExampleTodoList';
 import { ThemeProvider } from './components/ThemeProvider';
 import ThemeButton from './components/ThemeButton';
-import MyPage from './components/Mypage';
+import MyPage from './components/MyPage';
 
 // import TodoApp from './components/TodoApp';
 
