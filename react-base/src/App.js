@@ -5,6 +5,7 @@ import TodoInput from './components/TodoInputComponent';
 import ColorBar from './components/ColorBarComponent';
 import TodoList from './components/TodolistComponent';
 import Search from './components/SearchComponent';
+import SearchResult from './components/SearchResultComponent';
 
 function App() {
   const [inputColor, setInputColor] = useState('red');
@@ -14,13 +15,16 @@ function App() {
     'color': 'red'
   }]);
   const [searchText, setSearchText] = useState('');
+  const [searchTodo, setSearchTodo] = useState([]);
 
   return (
     <div className="App" style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
       <TodoInput inputColor={inputColor} text={text} setText={setText} todoList={todoList} setTodoList={setTodoList}/>
       <ColorBar setInputColor={setInputColor}/>
       <TodoList todoList={todoList}/>
-      <Search setSearchText={setSearchText}/>
+      <Search todoList={todoList} searchText={searchText} setSearchText={setSearchText} searchTodo={searchTodo} setSearchTodo={setSearchTodo} />
+      <SearchResult searchTodo={searchTodo}/>
+      
     
   </div>
   );
