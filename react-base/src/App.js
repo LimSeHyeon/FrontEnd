@@ -9,7 +9,12 @@ import {useState} from 'react';
 import FocusInputButton from './components/RegisterInputButton';
 import PrimeCalculator from './components/CalculatePrimes';
 import TodoList from './components/ExampleTodoList';
+import { ThemeProvider } from './components/ThemeProvider';
+import ThemeButton from './components/ThemeButton';
+import MyPage from './components/MyPage';
+
 // import TodoApp from './components/TodoApp';
+
 
 function App() {
   const [showCount, setShowCount] = useState(true);
@@ -36,7 +41,12 @@ function App() {
     {showCount? <CountComponent/> : null} */}
     {/* <FocusInputButton /> */}
     {/* <PrimeCalculator/> */}
-    <TodoList/>
+    return (
+      <ThemeProvider>
+        <MyPage/>
+        <ThemeButton/>
+      </ThemeProvider>
+    );
     
   </div>
   );
