@@ -1,4 +1,5 @@
 import React, {useCallback} from 'react';
+import {TodoStore} from '../lib/utils';
 
 export default function TodoInput({inputColor, text, setText, todoList, setTodoList}) {
 
@@ -7,7 +8,11 @@ export default function TodoInput({inputColor, text, setText, todoList, setTodoL
     }, [text]);
 
     const addTodo = useCallback((e) => {
-        setTodoList([...todoList, {text: text, color: inputColor}]);
+        const todos = [...todoList, {text: text, color: inputColor}];
+
+        setTodoList(todos);
+        TodoStore.setTodo(todos);
+                
     }, [text, inputColor, todoList]);
 
     return (

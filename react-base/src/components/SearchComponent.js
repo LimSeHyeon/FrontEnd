@@ -8,7 +8,7 @@ export default function Search({todoList, searchText, setSearchText, searchTodo,
                 return todo.text.includes(searchText);
         }));
         } else {
-            setSearchTodo([...todoList]);
+            setSearchTodo([]);
         }
     }, [searchText, todoList]);
 

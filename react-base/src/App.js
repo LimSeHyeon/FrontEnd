@@ -1,9 +1,10 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import TodoInput from './components/TodoInputComponent';
 import ColorBar from './components/ColorBarComponent';
 import TodoList from './components/TodolistComponent';
 import Search from './components/SearchComponent';
 import SearchResult from './components/SearchResultComponent';
+import {TodoStore} from './lib/utils';
 
 function App() {
   const [inputColor, setInputColor] = useState('red');
@@ -14,6 +15,10 @@ function App() {
   }]);
   const [searchText, setSearchText] = useState('');
   const [searchTodo, setSearchTodo] = useState([]);
+
+  useEffect(() => {
+    setTodoList(TodoStore.getTodo());
+  }, []);
 
   return (
     <div className="App" style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
