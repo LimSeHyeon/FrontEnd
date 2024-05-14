@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
 import {useState} from 'react';
 import TodoInput from './components/TodoInputComponent';
 import ColorBar from './components/ColorBarComponent';
