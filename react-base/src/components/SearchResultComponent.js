@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import TodoItem from './TodoItemComponent';
 
 export default function SearchResult({searchTodo}) {
