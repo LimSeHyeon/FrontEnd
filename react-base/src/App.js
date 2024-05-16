@@ -1,26 +1,32 @@
-import { ThemeProvider } from './components/ThemeProvider';
-import ThemeButton from './components/ThemeButton';
-import MyPage from './components/MyPage';
 import "bootstrap/dist/css/bootstrap.min.css";
-import Button from 'react-bootstrap/Button';
+import {Container, Row, ListGroup, Col} from 'react-bootstrap';
 
-// import TodoApp from './components/TodoApp';
-
+const items = [
+  {id:1, name:"임세현"},
+  {id:2, name:"최경서"},
+  {id:3, name:"박진아"}
+];
 
 function App() {
   return (
-    <div className="App">
-    return (
-      <ThemeProvider>
-        <Button variant="primary">기본</Button>
-        <Button variant="danger">Danger</Button>
-        <Button variant="Info">Info</Button>
-        <MyPage/>
-        <ThemeButton/>
-      </ThemeProvider>
-    );
+    <Container>
+      <Row>
+        <Col sm={6} xs={12}>
+        <h1>Users</h1>
+        <ListGroup defaultActiveKey="#link1">
+          {items.map(item=>(
+            <ListGroup.Item action key={item.id}>
+              {item.name}
+            </ListGroup.Item>
+          ))}
+        </ListGroup>
+        </Col>
+        <Col sm={6} xs={12}>
+        <h1>Stocks</h1>
+        </Col>
+      </Row>
+    </Container>
     
-  </div>
   );
 }
 
